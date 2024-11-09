@@ -108,8 +108,8 @@ def main():
             columns=columns
         )
 
-        test=rf_model.predict(predict_row).round(2)
-        st.info(f"Predicted price: {test}")
+        test=int(rf_model.predict(predict_row).round(2)[0])
+        st.info(f"Predicted price: €{test}")
 
 # This prevents the main logic in this script from executing when it's imported as a module in another script. This is
 # important because the main logic(like print statements, data processing, other code outside this function) will not execute automatically.
